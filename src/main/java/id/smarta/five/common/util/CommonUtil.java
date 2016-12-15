@@ -1,4 +1,4 @@
-package id.kemenkes.sip.common.util;
+package id.smarta.five.common.util;
 
 import java.security.SecureRandom;
 

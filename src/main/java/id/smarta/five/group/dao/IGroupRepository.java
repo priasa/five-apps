@@ -1,4 +1,4 @@
-package id.kemenkes.sip.group.dao;
+package id.smarta.five.group.dao;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import id.kemenkes.sip.group.entity.Group;
+import id.smarta.five.group.entity.Group;
 
 public interface IGroupRepository extends JpaRepository<Group, String>{
 	

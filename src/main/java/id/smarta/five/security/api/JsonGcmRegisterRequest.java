@@ -1,6 +1,6 @@
-package id.kemenkes.sip.security.api;
+package id.smarta.five.security.api;
 
-import id.kemenkes.sip.common.api.JsonApiCommonRequest;
+import id.smarta.five.common.api.JsonApiCommonRequest;
 
 public class JsonGcmRegisterRequest extends JsonApiCommonRequest{
 

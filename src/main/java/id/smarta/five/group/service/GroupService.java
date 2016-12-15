@@ -1,12 +1,12 @@
-package id.kemenkes.sip.group.service;
+package id.smarta.five.group.service;
 
 
-import id.kemenkes.sip.common.util.CommonUtil;
-import id.kemenkes.sip.group.dao.IGroupPermissionRepository;
-import id.kemenkes.sip.group.dao.IGroupRepository;
-import id.kemenkes.sip.group.entity.Group;
-import id.kemenkes.sip.group.entity.GroupDTO;
-import id.kemenkes.sip.group.entity.GroupPermission;
+import id.smarta.five.common.util.CommonUtil;
+import id.smarta.five.group.dao.IGroupPermissionRepository;
+import id.smarta.five.group.dao.IGroupRepository;
+import id.smarta.five.group.entity.Group;
+import id.smarta.five.group.entity.GroupDTO;
+import id.smarta.five.group.entity.GroupPermission;
 
 import java.util.List;
 import java.util.Map;
@@ -119,13 +119,8 @@ public class GroupService {
         roleMap.put(GroupPermission.MODULE_GROUP, getModulePermissionList(GroupPermission.MODULE_GROUP, true, true, true, false));
         roleMap.put(GroupPermission.MODULE_USER, getModulePermissionList(GroupPermission.MODULE_USER, true, true, true, false));
         roleMap.put(GroupPermission.MODULE_MASTER_DATA, getModulePermissionList(GroupPermission.MODULE_MASTER_DATA, true, true, true, false));
-        roleMap.put(GroupPermission.MODULE_TENANT, getModulePermissionList(GroupPermission.MODULE_TENANT, true, true, true, false));
-        roleMap.put(GroupPermission.MODULE_UKME, getModulePermissionList(GroupPermission.MODULE_UKME, true, true, true, false));
-        roleMap.put(GroupPermission.MODULE_UKMP, getModulePermissionList(GroupPermission.MODULE_UKMP, true, true, true, false));
-        roleMap.put(GroupPermission.MODULE_UKP, getModulePermissionList(GroupPermission.MODULE_UKP, true, true, true, false));
-        roleMap.put(GroupPermission.MODULE_LT, getModulePermissionList(GroupPermission.MODULE_LT, true, true, true, false));
-        roleMap.put(GroupPermission.MODULE_LAYANAN, getModulePermissionList(GroupPermission.MODULE_LAYANAN, true, true, true, false));
-
+        roleMap.put(GroupPermission.MODULE_SCHEDULER, getModulePermissionList(GroupPermission.MODULE_SCHEDULER, true, true, true, false));
+        
         return roleMap;
     }
     

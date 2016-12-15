@@ -1,8 +1,8 @@
-package id.kemenkes.sip.forgotpassword.service;
+package id.smarta.five.forgotpassword.service;
 
-import id.kemenkes.sip.common.user.util.UserUtils;
-import id.kemenkes.sip.forgotpassword.dao.ForgotPasswordRepository;
-import id.kemenkes.sip.forgotpassword.entity.ForgotPassword;
+import id.smarta.five.common.user.util.UserUtils;
+import id.smarta.five.forgotpassword.dao.ForgotPasswordRepository;
+import id.smarta.five.forgotpassword.entity.ForgotPassword;
 
 import java.util.Calendar;
 import java.util.Date;

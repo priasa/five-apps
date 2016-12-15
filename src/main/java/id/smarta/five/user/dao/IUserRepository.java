@@ -1,4 +1,4 @@
-package id.kemenkes.sip.user.dao;
+package id.smarta.five.user.dao;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import id.kemenkes.sip.user.entity.User;
+import id.smarta.five.user.entity.User;
 
 @Repository
 public interface IUserRepository extends JpaRepository<User, String>{

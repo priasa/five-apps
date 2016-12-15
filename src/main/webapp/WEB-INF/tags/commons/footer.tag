@@ -1,5 +1,5 @@
 <div class="footer">
-  	<div><strong>Copyright Kementerian Kesehatan RI 2016</strong></div>
+  	<div><strong>Copyright Smarta Sistem Indonesia 2016</strong></div>
 </div>
 <script type="text/javascript">
 	var _contextPath = "${pageContext.request.contextPath}";

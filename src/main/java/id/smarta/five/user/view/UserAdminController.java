@@ -1,14 +1,14 @@
-package id.kemenkes.sip.user.view;
+package id.smarta.five.user.view;
 
-import id.kemenkes.sip.common.util.DisplayTagUtil;
-import id.kemenkes.sip.group.entity.Group;
-import id.kemenkes.sip.group.service.GroupService;
-import id.kemenkes.sip.masterdata.entity.MasterData;
-import id.kemenkes.sip.masterdata.entity.MasterDataContent;
-import id.kemenkes.sip.masterdata.service.MasterDataService;
-import id.kemenkes.sip.user.entity.User;
-import id.kemenkes.sip.user.entity.UserDTO;
-import id.kemenkes.sip.user.service.UserService;
+import id.smarta.five.common.util.DisplayTagUtil;
+import id.smarta.five.group.entity.Group;
+import id.smarta.five.group.service.GroupService;
+import id.smarta.five.masterdata.entity.MasterData;
+import id.smarta.five.masterdata.entity.MasterDataContent;
+import id.smarta.five.masterdata.service.MasterDataService;
+import id.smarta.five.user.entity.User;
+import id.smarta.five.user.entity.UserDTO;
+import id.smarta.five.user.service.UserService;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

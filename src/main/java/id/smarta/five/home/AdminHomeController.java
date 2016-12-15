@@ -1,4 +1,4 @@
-package id.kemenkes.sip.home;
+package id.smarta.five.home;
 
 import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;

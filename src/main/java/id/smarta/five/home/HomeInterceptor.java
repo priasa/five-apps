@@ -1,4 +1,4 @@
-package id.kemenkes.sip.home;
+package id.smarta.five.home;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

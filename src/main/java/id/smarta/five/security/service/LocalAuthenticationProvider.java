@@ -1,8 +1,8 @@
-package id.kemenkes.sip.security.service;
+package id.smarta.five.security.service;
 
-import id.kemenkes.sip.group.entity.PermissionDTO;
-import id.kemenkes.sip.home.HomeController;
-import id.kemenkes.sip.user.entity.User;
+import id.smarta.five.group.entity.PermissionDTO;
+import id.smarta.five.home.HomeController;
+import id.smarta.five.user.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;

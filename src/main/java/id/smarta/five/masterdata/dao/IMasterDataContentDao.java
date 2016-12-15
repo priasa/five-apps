@@ -1,4 +1,4 @@
-package id.kemenkes.sip.masterdata.dao;
+package id.smarta.five.masterdata.dao;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import id.kemenkes.sip.masterdata.entity.MasterDataContent;
+import id.smarta.five.masterdata.entity.MasterDataContent;
 
 public interface IMasterDataContentDao extends JpaRepository<MasterDataContent, String>{
 

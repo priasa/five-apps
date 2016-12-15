@@ -1,4 +1,4 @@
-package id.kemenkes.sip.spring.security;
+package id.smarta.five.spring.security;
 
 import java.io.IOException;
 

@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>id.kemenkes</groupId>
-	<artifactId>sip</artifactId>
+	<groupId>id.smarta</groupId>
+	<artifactId>five</artifactId>
 	<version>0.0.1</version>
-	<name>Web Services SIP</name>
+	<name>Five Webapps</name>
 	<packaging>war</packaging>
 
 	<properties>
@@ -307,6 +307,27 @@
         	<version>${spring-data-mongodb}</version>
         </dependency>
         
+        <dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz-jobs</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>3.2</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>1.8.3</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -370,7 +391,7 @@
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
-					<contextPath>wsportal</contextPath>
+					<contextPath>five</contextPath>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -390,14 +411,14 @@
 			</activation>
 			<properties>
 				<db.url.nodb>jdbc:mysql://localhost:3306/</db.url.nodb>
-				<db.url>jdbc:mysql://localhost:3306/ws_sip?characterEncoding=UTF-8&amp;autoReconnect=true</db.url>
+				<db.url>jdbc:mysql://localhost:3306/five?characterEncoding=UTF-8&amp;autoReconnect=true</db.url>
 				<db.admin.username>root</db.admin.username>
 				<db.admin.password>3nengtri</db.admin.password>
 				<db.username>root</db.username>
 				<db.password>3nengtri</db.password>
 				<mongodb.host>localhost</mongodb.host>
-				<mongodb.db.name>ws_sip</mongodb.db.name>
-				<mongodb.db.username>pusdatin</mongodb.db.username>
+				<mongodb.db.name>five</mongodb.db.name>
+				<mongodb.db.username>smarta</mongodb.db.username>
 				<mongodb.db.password>3nengtri</mongodb.db.password>
 				<templateFolder>./template</templateFolder>
 				<siteUrl>http://localhost:9191</siteUrl>
@@ -414,14 +435,14 @@
 			</activation>
 			<properties>
 				<db.url.nodb>jdbc:mysql://101.50.3.158:3306/</db.url.nodb>
-				<db.url>jdbc:mysql://101.50.3.158:3306/ws_sip?characterEncoding=UTF-8&amp;autoReconnect=true</db.url>
+				<db.url>jdbc:mysql://101.50.3.158:3306/five?characterEncoding=UTF-8&amp;autoReconnect=true</db.url>
 				<db.admin.username>root</db.admin.username>
 				<db.admin.password>3nengtri</db.admin.password>
 				<db.username>pusdatin</db.username>
 				<db.password>3nengtri</db.password>
 				<mongodb.host>localhost</mongodb.host>
-				<mongodb.db.name>ws_sip</mongodb.db.name>
-				<mongodb.db.username>pusdatin</mongodb.db.username>
+				<mongodb.db.name>five</mongodb.db.name>
+				<mongodb.db.username>smarta</mongodb.db.username>
 				<mongodb.db.password>3nengtri</mongodb.db.password>
 				<templateFolder>./template</templateFolder>
 				<enable.workflow>true</enable.workflow>

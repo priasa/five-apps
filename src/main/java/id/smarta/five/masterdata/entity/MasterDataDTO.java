@@ -1,4 +1,4 @@
-package id.kemenkes.sip.masterdata.entity;
+package id.smarta.five.masterdata.entity;
 
 import java.io.Serializable;
 import java.util.List;

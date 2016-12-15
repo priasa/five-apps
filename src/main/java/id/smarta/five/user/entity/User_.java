@@ -1,9 +1,9 @@
-package id.kemenkes.sip.user.entity;
+package id.smarta.five.user.entity;
 
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-import id.kemenkes.sip.group.entity.Group;
+import id.smarta.five.group.entity.Group;
 
 @StaticMetamodel(User.class)
 public class User_ {

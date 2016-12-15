@@ -1,11 +1,11 @@
-package id.kemenkes.sip.masterdata.api;
+package id.smarta.five.masterdata.api;
 
-import id.kemenkes.sip.common.api.JsonApiCommonResponse.STATUS;
-import id.kemenkes.sip.masterdata.entity.MasterData;
-import id.kemenkes.sip.masterdata.entity.MasterDataContent;
-import id.kemenkes.sip.masterdata.entity.MasterDataContentRestDTO;
-import id.kemenkes.sip.masterdata.entity.MasterDataDTO;
-import id.kemenkes.sip.masterdata.service.MasterDataService;
+import id.smarta.five.common.api.JsonApiCommonResponse.STATUS;
+import id.smarta.five.masterdata.entity.MasterData;
+import id.smarta.five.masterdata.entity.MasterDataContent;
+import id.smarta.five.masterdata.entity.MasterDataContentRestDTO;
+import id.smarta.five.masterdata.entity.MasterDataDTO;
+import id.smarta.five.masterdata.service.MasterDataService;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

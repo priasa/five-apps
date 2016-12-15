@@ -1,8 +1,8 @@
-package id.kemenkes.sip.user.entity;
+package id.smarta.five.user.entity;
 
-import id.kemenkes.sip.common.entity.AbstractAuditablePersistable;
-import id.kemenkes.sip.group.entity.Group;
-import id.kemenkes.sip.group.entity.PermissionDTO;
+import id.smarta.five.common.entity.AbstractAuditablePersistable;
+import id.smarta.five.group.entity.Group;
+import id.smarta.five.group.entity.PermissionDTO;
 
 import java.util.Date;
 import java.util.List;

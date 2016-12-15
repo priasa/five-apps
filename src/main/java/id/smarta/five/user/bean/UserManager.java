@@ -1,8 +1,8 @@
-package id.kemenkes.sip.user.bean;
+package id.smarta.five.user.bean;
 
-import id.kemenkes.sip.common.dao.QueryConditionParams;
-import id.kemenkes.sip.user.dao.IUserRepository;
-import id.kemenkes.sip.user.entity.User;
+import id.smarta.five.common.dao.QueryConditionParams;
+import id.smarta.five.user.dao.IUserRepository;
+import id.smarta.five.user.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;

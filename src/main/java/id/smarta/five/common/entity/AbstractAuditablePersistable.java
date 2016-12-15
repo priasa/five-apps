@@ -1,4 +1,4 @@
-package id.kemenkes.sip.common.entity;
+package id.smarta.five.common.entity;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 
-import id.kemenkes.sip.common.user.util.UserUtils;
+import id.smarta.five.common.user.util.UserUtils;
 
 @MappedSuperclass
 public class AbstractAuditablePersistable extends AbstractPersistable{

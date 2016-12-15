@@ -1,7 +1,7 @@
-package id.kemenkes.sip.masterdata.api;
+package id.smarta.five.masterdata.api;
 
-import id.kemenkes.sip.common.api.JsonApiCommonResponse;
-import id.kemenkes.sip.masterdata.entity.MasterDataDTO;
+import id.smarta.five.common.api.JsonApiCommonResponse;
+import id.smarta.five.masterdata.entity.MasterDataDTO;
 
 public class JsonMasterDataResponse extends JsonApiCommonResponse {
 

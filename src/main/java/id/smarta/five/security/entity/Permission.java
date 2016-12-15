@@ -1,4 +1,4 @@
-package id.kemenkes.sip.security.entity;
+package id.smarta.five.security.entity;
 
 import java.io.Serializable;
 

@@ -1,10 +1,10 @@
-package id.kemenkes.sip.group.entity;
+package id.smarta.five.group.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import id.kemenkes.sip.common.entity.AbstractPersistable;
+import id.smarta.five.common.entity.AbstractPersistable;
 
 @Entity
 @Table(name="group_permission")
@@ -39,6 +39,8 @@ public class GroupPermission extends AbstractPersistable{
 	public static final String MODULE_LT = "LT";
 
 	public static final String MODULE_LAYANAN = "LAYANAN";
+
+	public static final String MODULE_SCHEDULER = "SCHEDULER";
        
     private String permissionKey;
     

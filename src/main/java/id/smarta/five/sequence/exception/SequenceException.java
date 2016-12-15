@@ -1,4 +1,4 @@
-package id.kemenkes.sip.sequence.exception;
+package id.smarta.five.sequence.exception;
 
 public class SequenceException extends Exception {
 

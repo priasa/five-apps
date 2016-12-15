@@ -1,4 +1,4 @@
-package id.kemenkes.sip.web;
+package id.smarta.five.web;
 
 import java.sql.Driver;
 import java.sql.DriverManager;

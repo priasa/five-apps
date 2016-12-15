@@ -1,4 +1,4 @@
-package id.kemenkes.sip.group.entity;
+package id.smarta.five.group.entity;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import com.google.common.collect.Lists;
 
-import id.kemenkes.sip.common.entity.AbstractAuditablePersistable;
+import id.smarta.five.common.entity.AbstractAuditablePersistable;
 
 @Entity
 @Table(name="user_group")

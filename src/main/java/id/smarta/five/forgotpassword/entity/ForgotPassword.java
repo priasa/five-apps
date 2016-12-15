@@ -1,9 +1,9 @@
-package id.kemenkes.sip.forgotpassword.entity;
+package id.smarta.five.forgotpassword.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import id.kemenkes.sip.common.entity.AbstractAuditablePersistable;
+import id.smarta.five.common.entity.AbstractAuditablePersistable;
 
 @Entity
 @Table(name = "forgot_password")

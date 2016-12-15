@@ -1,17 +1,17 @@
-package id.kemenkes.sip.security.service;
+package id.smarta.five.security.service;
 
-import id.kemenkes.sip.common.security.util.HashSalt;
-import id.kemenkes.sip.common.security.util.PasswordGeneratorUtil;
-import id.kemenkes.sip.common.security.util.PasswordSalt;
-import id.kemenkes.sip.common.user.util.UserUtils;
-import id.kemenkes.sip.group.entity.Group;
-import id.kemenkes.sip.group.entity.GroupPermission;
-import id.kemenkes.sip.group.entity.PermissionDTO;
-import id.kemenkes.sip.group.service.GroupService;
-import id.kemenkes.sip.masterdata.entity.MasterData;
-import id.kemenkes.sip.masterdata.service.MasterDataService;
-import id.kemenkes.sip.user.entity.User;
-import id.kemenkes.sip.user.service.UserService;
+import id.smarta.five.common.security.util.HashSalt;
+import id.smarta.five.common.security.util.PasswordGeneratorUtil;
+import id.smarta.five.common.security.util.PasswordSalt;
+import id.smarta.five.common.user.util.UserUtils;
+import id.smarta.five.group.entity.Group;
+import id.smarta.five.group.entity.GroupPermission;
+import id.smarta.five.group.entity.PermissionDTO;
+import id.smarta.five.group.service.GroupService;
+import id.smarta.five.masterdata.entity.MasterData;
+import id.smarta.five.masterdata.service.MasterDataService;
+import id.smarta.five.user.entity.User;
+import id.smarta.five.user.service.UserService;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;

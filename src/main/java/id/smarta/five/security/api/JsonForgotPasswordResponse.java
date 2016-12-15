@@ -1,6 +1,6 @@
-package id.kemenkes.sip.security.api;
+package id.smarta.five.security.api;
 
-import id.kemenkes.sip.common.api.JsonApiCommonResponse;
+import id.smarta.five.common.api.JsonApiCommonResponse;
 
 public class JsonForgotPasswordResponse extends JsonApiCommonResponse{
 

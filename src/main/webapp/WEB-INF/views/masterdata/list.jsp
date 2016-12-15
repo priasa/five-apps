@@ -14,11 +14,24 @@
                  	<input type="text" id="name" name="name" class="input-sm form-control inline" placeholder="<fmt:message key="general.name" />" value="${name}" />
 					<input type="submit" class="btn btn-primary btn-sm" value="<fmt:message key='general.search' />" />
                   </div>
-			      <div class="row tableAction">
-                </div>
-                <br/>
+				<div class="row tableAction">
+					<div class="col-lg-12">
+						<button type="button" class="btn btn-success btn-sm"
+							onclick="newRecord()">
+							<fmt:message key="general.new" />
+						</button>
+						<button type="submit" class="btn btn-danger btn-sm"
+							onclick="return deleteRecords()">
+							<fmt:message key="general.delete" />
+						</button>
+					</div>
+				</div>
+				<br/>
                 <display:table id="${id}" name="${rows}" size="${size}" pagesize="20" export="false" class="table table-striped" requestURI="?" sort="external" partialList="true">
-                    
+                    <display:column media="html" title="<input type='checkbox' id='selectall'/><span class='custom-checkbox'></span>" class="selectAll">
+						<input name="id" type="checkbox" value="${md.id}" />
+						<span class="custom-checkbox"></span>
+					</display:column>
                     <display:column titleKey="general.name" sortable="true">
                         <c:url var="editUrl" value="/web/masterdata/edit/${md.id }">
                         </c:url>

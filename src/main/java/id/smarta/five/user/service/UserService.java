@@ -1,4 +1,4 @@
-package id.kemenkes.sip.user.service;
+package id.smarta.five.user.service;
 
 import java.lang.reflect.InvocationTargetException;
 import java.security.NoSuchAlgorithmException;
@@ -15,17 +15,17 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import id.kemenkes.sip.common.security.util.HashSalt;
-import id.kemenkes.sip.common.security.util.PasswordGeneratorUtil;
-import id.kemenkes.sip.common.util.CommonUtil;
-import id.kemenkes.sip.group.entity.Group;
-import id.kemenkes.sip.group.service.GroupService;
-import id.kemenkes.sip.home.ResetPasswordForm;
-import id.kemenkes.sip.user.dao.IUserRepository;
-import id.kemenkes.sip.user.dao.UserSpecifications;
-import id.kemenkes.sip.user.entity.User;
-import id.kemenkes.sip.user.entity.UserDTO;
-import id.kemenkes.sip.user.entity.UserProfileDTO;
+import id.smarta.five.common.security.util.HashSalt;
+import id.smarta.five.common.security.util.PasswordGeneratorUtil;
+import id.smarta.five.common.util.CommonUtil;
+import id.smarta.five.group.entity.Group;
+import id.smarta.five.group.service.GroupService;
+import id.smarta.five.home.ResetPasswordForm;
+import id.smarta.five.user.dao.IUserRepository;
+import id.smarta.five.user.dao.UserSpecifications;
+import id.smarta.five.user.entity.User;
+import id.smarta.five.user.entity.UserDTO;
+import id.smarta.five.user.entity.UserProfileDTO;
 
 @Service
 public class UserService {

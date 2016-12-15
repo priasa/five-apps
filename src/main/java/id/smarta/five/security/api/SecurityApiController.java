@@ -1,4 +1,4 @@
-package id.kemenkes.sip.security.api;
+package id.smarta.five.security.api;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import id.kemenkes.sip.common.api.JsonApiCommonResponse;
-import id.kemenkes.sip.security.service.SecurityManager;
-import id.kemenkes.sip.user.entity.User;
+import id.smarta.five.common.api.JsonApiCommonResponse;
+import id.smarta.five.security.service.SecurityManager;
+import id.smarta.five.user.entity.User;
 
 @Controller
 @RequestMapping("/rest/")

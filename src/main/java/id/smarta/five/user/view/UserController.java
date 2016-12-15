@@ -1,4 +1,4 @@
-package id.kemenkes.sip.user.view;
+package id.smarta.five.user.view;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -22,10 +22,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import id.kemenkes.sip.security.service.LocalUserDetails;
-import id.kemenkes.sip.user.entity.User;
-import id.kemenkes.sip.user.entity.UserProfileDTO;
-import id.kemenkes.sip.user.service.UserService;
+import id.smarta.five.security.service.LocalUserDetails;
+import id.smarta.five.user.entity.User;
+import id.smarta.five.user.entity.UserProfileDTO;
+import id.smarta.five.user.service.UserService;
 
 @Controller
 @RequestMapping("/web")

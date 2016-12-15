@@ -1,4 +1,4 @@
-package id.kemenkes.sip.spring.security;
+package id.smarta.five.spring.security;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,24 +13,18 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;
 
-import id.kemenkes.sip.group.service.GroupService;
-import id.kemenkes.sip.security.service.LocalUserDetails;
-import id.kemenkes.sip.tenant.dao.TenantRepository;
-import id.kemenkes.sip.tenant.entity.TenantEntity;
+import id.smarta.five.group.service.GroupService;
+import id.smarta.five.security.service.LocalUserDetails;
 
 public class RestSecurityFilter extends GenericFilterBean{
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(RestSecurityFilter.class);
-	
-	@Autowired
-	TenantRepository tenantRepository;
 	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) 
@@ -50,10 +44,7 @@ public class RestSecurityFilter extends GenericFilterBean{
 				setAuthenticationToContext("anonymous", gaList);
 			}
 		} else {
-			TenantEntity tenantEntity = tenantRepository.findByTokenId(tokenId);
-			if (tenantEntity != null) {
-				setAuthenticationToContext(tenantEntity.getTenantCode(), gaList);
-			}
+			
 		}
 		
 		

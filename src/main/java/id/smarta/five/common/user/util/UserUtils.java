@@ -1,4 +1,4 @@
-package id.kemenkes.sip.common.user.util;
+package id.smarta.five.common.user.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

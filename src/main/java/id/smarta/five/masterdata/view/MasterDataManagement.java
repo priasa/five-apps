@@ -1,11 +1,11 @@
-package id.kemenkes.sip.masterdata.view;
+package id.smarta.five.masterdata.view;
 
-import id.kemenkes.sip.common.util.DisplayTagUtil;
-import id.kemenkes.sip.masterdata.entity.MasterData;
-import id.kemenkes.sip.masterdata.entity.MasterDataContent;
-import id.kemenkes.sip.masterdata.entity.MasterDataContentRestDTO;
-import id.kemenkes.sip.masterdata.entity.MasterDataDTO;
-import id.kemenkes.sip.masterdata.service.MasterDataService;
+import id.smarta.five.common.util.DisplayTagUtil;
+import id.smarta.five.masterdata.entity.MasterData;
+import id.smarta.five.masterdata.entity.MasterDataContent;
+import id.smarta.five.masterdata.entity.MasterDataContentRestDTO;
+import id.smarta.five.masterdata.entity.MasterDataDTO;
+import id.smarta.five.masterdata.service.MasterDataService;
 
 import java.util.ArrayList;
 import java.util.List;

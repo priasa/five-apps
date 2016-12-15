@@ -1,4 +1,4 @@
-package id.kemenkes.sip.group.entity;
+package id.smarta.five.group.entity;
 
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;

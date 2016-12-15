@@ -1,4 +1,4 @@
-package id.kemenkes.sip.user.entity;
+package id.smarta.five.user.entity;
 
 import javax.persistence.Column;
 

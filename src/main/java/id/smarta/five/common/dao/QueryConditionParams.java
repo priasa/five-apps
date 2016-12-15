@@ -1,4 +1,4 @@
-package id.kemenkes.sip.common.dao;
+package id.smarta.five.common.dao;
 
 public class QueryConditionParams {
 

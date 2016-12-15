@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	    <title>SIP - Web Services Portal.</title>
+	    <title>F I V E.</title>
 	
 	    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/font-awesome.css" >
@@ -20,10 +20,8 @@
 	<body class="gray-bg">
     	<div class="middle-box text-center loginscreen animated fadeInDown" style="padding-top: 100px;">
         	<div>
-            	<div>
-					<img class="animated" src="${pageContext.request.contextPath}/images/sip.png"/>
-				</div>
-            	<h2>SIP - Web Services Portal.</h2>
+            	
+            	<h2>F I V E.</h2>
             	<c:if test="${not empty param.error && not empty sessionScope['SPRING_SECURITY_LAST_EXCEPTION']}">
 					<div class="alert alert-danger">
 						<c:out value="${sessionScope['SPRING_SECURITY_LAST_EXCEPTION'].message}" />
@@ -55,7 +53,7 @@
 	                <a href="${pageContext.request.contextPath}/" class="btn btn-default block full-width m-b">Home</a><br/>
 	                
             	</form>
-            	<p class="m-t"><small>@Copyright Kementerian Kesehatan RI 2016</small> </p>
+            	<p class="m-t"><small>@Copyright Smarta Sistem Indonesia 2016</small> </p>
         	</div>
     	</div>
     	<script src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>

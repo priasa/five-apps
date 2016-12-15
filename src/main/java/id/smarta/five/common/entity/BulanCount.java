@@ -1,4 +1,4 @@
-package id.kemenkes.sip.common.entity;
+package id.smarta.five.common.entity;
 
 import java.io.Serializable;
 

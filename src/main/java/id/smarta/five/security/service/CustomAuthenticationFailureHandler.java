@@ -1,7 +1,7 @@
-package id.kemenkes.sip.security.service;
+package id.smarta.five.security.service;
 
-import id.kemenkes.sip.user.entity.User;
-import id.kemenkes.sip.user.service.UserService;
+import id.smarta.five.user.entity.User;
+import id.smarta.five.user.service.UserService;
 
 import java.io.IOException;
 

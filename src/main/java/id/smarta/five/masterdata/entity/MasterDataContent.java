@@ -1,4 +1,4 @@
-package id.kemenkes.sip.masterdata.entity;
+package id.smarta.five.masterdata.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -7,7 +7,7 @@ import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import id.kemenkes.sip.common.entity.AbstractAuditablePersistable;
+import id.smarta.five.common.entity.AbstractAuditablePersistable;
 
 @Entity
 @Table(name="master_data_content")

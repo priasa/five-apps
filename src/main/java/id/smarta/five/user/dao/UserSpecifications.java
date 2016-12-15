@@ -1,8 +1,8 @@
-package id.kemenkes.sip.user.dao;
+package id.smarta.five.user.dao;
 
-import id.kemenkes.sip.group.entity.Group;
-import id.kemenkes.sip.user.entity.User;
-import id.kemenkes.sip.user.entity.User_;
+import id.smarta.five.group.entity.Group;
+import id.smarta.five.user.entity.User;
+import id.smarta.five.user.entity.User_;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;

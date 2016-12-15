@@ -1,10 +1,10 @@
-package id.kemenkes.sip.group.view;
+package id.smarta.five.group.view;
 
-import id.kemenkes.sip.common.util.DisplayTagUtil;
-import id.kemenkes.sip.group.entity.Group;
-import id.kemenkes.sip.group.entity.GroupDTO;
-import id.kemenkes.sip.group.entity.GroupPermission;
-import id.kemenkes.sip.group.service.GroupService;
+import id.smarta.five.common.util.DisplayTagUtil;
+import id.smarta.five.group.entity.Group;
+import id.smarta.five.group.entity.GroupDTO;
+import id.smarta.five.group.entity.GroupPermission;
+import id.smarta.five.group.service.GroupService;
 
 import java.util.List;
 import java.util.Map;

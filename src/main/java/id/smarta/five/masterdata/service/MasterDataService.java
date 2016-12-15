@@ -1,10 +1,10 @@
-package id.kemenkes.sip.masterdata.service;
+package id.smarta.five.masterdata.service;
 
-import id.kemenkes.sip.common.util.CommonUtil;
-import id.kemenkes.sip.masterdata.dao.IMasterDataContentDao;
-import id.kemenkes.sip.masterdata.dao.IMasterDataDao;
-import id.kemenkes.sip.masterdata.entity.MasterData;
-import id.kemenkes.sip.masterdata.entity.MasterDataContent;
+import id.smarta.five.common.util.CommonUtil;
+import id.smarta.five.masterdata.dao.IMasterDataContentDao;
+import id.smarta.five.masterdata.dao.IMasterDataDao;
+import id.smarta.five.masterdata.entity.MasterData;
+import id.smarta.five.masterdata.entity.MasterDataContent;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class MasterDataService {
     static final Logger LOGGER = LoggerFactory.getLogger(MasterDataService.class);
 
 	public static final String DEFAULT_PRODUCT_TYPE = "DEFAULT_PRODUCT_TYPE";
-	public static final String BPJS_PCARE = "BPJS_PCARE";
+	public static final String GNEWS = "GNEWS";
 	public static final String ADMINDUK = "ADMINDUK";
 	public static final String KOMDAT = "KOMDAT";
 	public static final String SIMPUS = "SIMPUS";

@@ -1,11 +1,11 @@
-package id.kemenkes.sip.security.view;
+package id.smarta.five.security.view;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import id.kemenkes.sip.common.user.util.UserUtils;
+import id.smarta.five.common.user.util.UserUtils;
 
 @Controller
 public class SecurityController {

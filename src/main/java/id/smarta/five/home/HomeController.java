@@ -1,12 +1,12 @@
-package id.kemenkes.sip.home;
+package id.smarta.five.home;
 
-import id.kemenkes.sip.common.user.util.UserUtils;
-import id.kemenkes.sip.forgotpassword.entity.ForgotPassword;
-import id.kemenkes.sip.forgotpassword.service.ForgotPasswordService;
-import id.kemenkes.sip.user.entity.ForgotPasswordForm;
-import id.kemenkes.sip.user.entity.User;
-import id.kemenkes.sip.user.entity.User.STATUS;
-import id.kemenkes.sip.user.service.UserService;
+import id.smarta.five.common.user.util.UserUtils;
+import id.smarta.five.forgotpassword.entity.ForgotPassword;
+import id.smarta.five.forgotpassword.service.ForgotPasswordService;
+import id.smarta.five.user.entity.ForgotPasswordForm;
+import id.smarta.five.user.entity.User;
+import id.smarta.five.user.entity.User.STATUS;
+import id.smarta.five.user.service.UserService;
 
 import java.util.Date;
 import java.util.UUID;

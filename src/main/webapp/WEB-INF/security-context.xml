@@ -34,8 +34,8 @@
         <security:custom-filter ref="restSecurityFilter" after="SECURITY_CONTEXT_FILTER" />
     </security:http>
 	
-    <beans:bean id="restSecurityFilter" class="id.kemenkes.sip.spring.security.RestSecurityFilter"/>
-    <beans:bean id="restAuthenticationEntryPoint" class="id.kemenkes.sip.spring.security.RestAuthenticationEntryPoint"/>
+    <beans:bean id="restSecurityFilter" class="id.smarta.five.spring.security.RestSecurityFilter"/>
+    <beans:bean id="restAuthenticationEntryPoint" class="id.smarta.five.spring.security.RestAuthenticationEntryPoint"/>
 	
 	
 	<!-- WEB SECURITY SETTINGS -->
@@ -48,34 +48,14 @@
 		<security:intercept-url pattern="/resetpassword/**" access="permitAll"/>
 		<security:intercept-url pattern="/activation" access="permitAll"/>
 		<security:intercept-url pattern="/web/home" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukme1/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukme2/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukme3a/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukme3b/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukme4/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukme5/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukme6/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukme7/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukp1/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukp2/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukp3/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukp4/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukp5/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukp6/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/ukmp2/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/lt1/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/lt2/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/lt3/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/pelayanan/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/icd/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/provinsi/howto" access="permitAll"/>
-		<security:intercept-url pattern="/web/kabupaten/howto" access="permitAll"/>
+		
 		
 				
 		<security:intercept-url pattern="/web/user/**" access="hasAnyRole('ROLE_USER_VIEW', 'ROLE_USER_ADD_EDIT', 'ROLE_USER_DELETE')"/>
 		<security:intercept-url pattern="/web/group/**" access="hasAnyRole('ROLE_GROUP_VIEW', 'ROLE_GROUP_ADD_EDIT', 'ROLE_GROUP_DELETE')"/>
 		<security:intercept-url pattern="/web/masterdata/**" access="hasAnyRole('ROLE_MASTER_DATA_VIEW', 'ROLE_MASTER_DATA_ADD_EDIT', 'ROLE_MASTER_DATA_DELETE')"/>
 		<security:intercept-url pattern="/web/guest/**" access="hasAnyRole('ROLE_GUEST_VIEW', 'ROLE_GUEST_ADD_EDIT', 'ROLE_GUEST_DELETE')"/>
+		<security:intercept-url pattern="/web/scheduler/**" access="hasAnyRole('ROLE_SCHEDULER_VIEW', 'ROLE_SCHEDULER_ADD_EDIT', 'ROLE_SCHEDULER_DELETE')"/>
 				
 		<security:intercept-url pattern="/web/**" access="isAuthenticated()"/>
 		
@@ -95,11 +75,11 @@
 		<beans:property name="postOnly" value="true"/>
 	</beans:bean>
 	
-	<beans:bean id='customSuccessHandler' class='id.kemenkes.sip.security.service.CustomAuthenticationSuccessHandler'>
+	<beans:bean id='customSuccessHandler' class='id.smarta.five.security.service.CustomAuthenticationSuccessHandler'>
 		<beans:property name="defaultTargetUrl" value="/web" />
 	</beans:bean>
 	
-	<beans:bean id="customFailureHandler" class="id.kemenkes.sip.security.service.CustomAuthenticationFailureHandler">
+	<beans:bean id="customFailureHandler" class="id.smarta.five.security.service.CustomAuthenticationFailureHandler">
         <beans:property name="defaultFailureUrl" value="/web/login?error=true" />
     </beans:bean>
 	
@@ -107,7 +87,7 @@
 		<security:authentication-provider ref="localAuthenticationProvider"/>
 	</security:authentication-manager>
 	
-	<beans:bean id='localAuthenticationProvider' class='id.kemenkes.sip.security.service.LocalAuthenticationProvider'/>
+	<beans:bean id='localAuthenticationProvider' class='id.smarta.five.security.service.LocalAuthenticationProvider'/>
 	
 	<beans:bean id="localLogoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter">
 		<beans:constructor-arg value="/web/login" />

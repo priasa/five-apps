@@ -1,4 +1,4 @@
-package id.kemenkes.sip.home;
+package id.smarta.five.home;
 
 import java.io.Serializable;
 

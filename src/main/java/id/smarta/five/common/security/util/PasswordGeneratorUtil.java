@@ -1,4 +1,4 @@
-package id.kemenkes.sip.common.security.util;
+package id.smarta.five.common.security.util;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
