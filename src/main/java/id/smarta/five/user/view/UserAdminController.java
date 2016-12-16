@@ -1,17 +1,6 @@
 package id.smarta.five.user.view;
 
-import id.smarta.five.common.util.DisplayTagUtil;
-import id.smarta.five.group.entity.Group;
-import id.smarta.five.group.service.GroupService;
-import id.smarta.five.masterdata.entity.MasterData;
-import id.smarta.five.masterdata.entity.MasterDataContent;
-import id.smarta.five.masterdata.service.MasterDataService;
-import id.smarta.five.user.entity.User;
-import id.smarta.five.user.entity.UserDTO;
-import id.smarta.five.user.service.UserService;
-
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -41,6 +30,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import id.smarta.five.common.util.DisplayTagUtil;
+import id.smarta.five.group.entity.Group;
+import id.smarta.five.group.service.GroupService;
+import id.smarta.five.masterdata.service.MasterDataService;
+import id.smarta.five.user.entity.User;
+import id.smarta.five.user.entity.UserDTO;
+import id.smarta.five.user.service.UserService;
 
 @Controller
 @RequestMapping("/web/user")
@@ -104,14 +101,7 @@ public class UserAdminController {
         
         model.addAttribute("userDTO", form);
         model.addAttribute("menu", "admin.user");
-        
-        List<MasterDataContent> availableServices = new ArrayList<MasterDataContent>();
-        MasterData md = masterDataService.findMasterDataByName(MasterDataService.BPJS_PCARE);
-        if (md != null) {
-            availableServices = masterDataService.getMDContentByParentId(md.getId());
-        }
-        model.addAttribute("availableServices", availableServices);
-        
+         
         return "user/new";
     }
     
