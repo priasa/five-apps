@@ -18,10 +18,8 @@
 		<link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon">
 	</head>
 	<body class="gray-bg">
-    	<div class="middle-box text-center loginscreen animated fadeInDown" style="padding-top: 100px;">
-        	<div>
-            	
-            	<h2>F I V E.</h2>
+    	<div class="middle-box text-center animated fadeInDown">
+            	<h1>FIVE.</h1>
             	<c:if test="${not empty param.error && not empty sessionScope['SPRING_SECURITY_LAST_EXCEPTION']}">
 					<div class="alert alert-danger">
 						<c:out value="${sessionScope['SPRING_SECURITY_LAST_EXCEPTION'].message}" />
@@ -55,7 +53,6 @@
             	</form>
             	<p class="m-t"><small>@Copyright Smarta Sistem Indonesia 2016</small> </p>
         	</div>
-    	</div>
     	<script src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>
     	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 	</body>

@@ -22,6 +22,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,6 +33,7 @@ import id.smarta.five.common.util.CommonUtil;
 import id.smarta.five.common.util.DisplayTagUtil;
 import id.smarta.five.scheduler.dao.SchedulerDetailRepository;
 import id.smarta.five.scheduler.dao.SchedulerLogRepository;
+import id.smarta.five.scheduler.entity.JobStatus;
 import id.smarta.five.scheduler.entity.SchedulerDetail;
 import id.smarta.five.scheduler.entity.SchedulerLog;
 import id.smarta.five.scheduler.entity.TriggerTypes;
@@ -64,6 +66,11 @@ public class SchedulerController {
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
         
+    }
+	
+	@ModelAttribute("schedulerLogStatus")
+    public JobStatus[] getAllUserStatus(){
+    	return JobStatus.values();
     }
 	
 	@RequestMapping(value="/detail/new", method=RequestMethod.GET)
@@ -103,29 +110,22 @@ public class SchedulerController {
     }
 	
 	@RequestMapping(value="/detail/list", method=RequestMethod.GET)
-    public String list(ModelMap model, HttpServletRequest request, @RequestParam(value = "jobName", required = false) String jobName,
-    		 @RequestParam(value = "triggerName", required = false) String triggerName) throws ParseException{
+    public String list(ModelMap model, HttpServletRequest request, @RequestParam(value = "jobOrTriggerName", required = false) String jobOrTriggerName) throws ParseException{
         
-    	if (jobName != null) {
-    		if (jobName.isEmpty())
-    			jobName = "";
+    	if (jobOrTriggerName != null) {
+    		if (jobOrTriggerName.isEmpty())
+    			jobOrTriggerName = "";
     	}
     	
-    	if (triggerName != null) {
-    		if (triggerName.isEmpty())
-    			triggerName = "";
-    	}
-    	
-    	String wildCardJobName = CommonUtil.addWildCard(jobName);
-    	String wildCardTriggerName = CommonUtil.addWildCard(triggerName);
+    	String wildCardJobName = CommonUtil.addWildCard(jobOrTriggerName);
+    	String wildCardTriggerName = CommonUtil.addWildCard(jobOrTriggerName);
     	
         String id = "schedulerDetail";
         String sort = DisplayTagUtil.getListSort(id, request, new String[]{"", "jobName","triggerName"}, "jobName");
         Boolean desc = DisplayTagUtil.getListDesc(id, request, false);
         Integer start = DisplayTagUtil.getListStart(id, request, null);
         
-        model.addAttribute("jobName", jobName);
-        model.addAttribute("triggerName", triggerName);
+        model.addAttribute("jobOrTriggerName", jobOrTriggerName);
         model.addAttribute("id", id);
         
         Pageable page = new PageRequest(start, DisplayTagUtil.DEFAULT_PAGE_SIZE, (desc != null && desc)?Sort.Direction.DESC:Sort.Direction.ASC, sort);
@@ -140,35 +140,37 @@ public class SchedulerController {
     }
 	
 	@RequestMapping(value="/log/list", method=RequestMethod.GET)
-    public String log(ModelMap model, HttpServletRequest request, @RequestParam(value = "jobName", required = false) String jobName,
-    		@RequestParam(value = "jobClassName", required = false) String jobClassName) throws ParseException{
+    public String log(ModelMap model, HttpServletRequest request, @RequestParam(value = "jobOrClassName", required = false) String jobOrClassName, 
+    		@RequestParam(value = "logStatus", required = false) String logStatus) throws ParseException{
         
-    	if (jobName != null) {
-    		if (jobName.isEmpty())
-    			jobName = "";
+    	if (jobOrClassName != null) {
+    		if (jobOrClassName.isEmpty())
+    			jobOrClassName = "";
     	}
-    	    
-    	if (jobClassName != null) {
-    		if (jobClassName.isEmpty())
-    			jobClassName = "";
+    	 
+    	if (logStatus != null) {
+    		if (logStatus.isEmpty())
+    			logStatus = JobStatus.SUCCESS.getCode();
     	}
     	
-    	String wildCardJobName = CommonUtil.addWildCard(jobName);
-    	String wildCardJobClassName = CommonUtil.addWildCard(jobClassName);
+    	String wildCardJobName = CommonUtil.addWildCard(jobOrClassName);
+    	String wildCardJobClassName = CommonUtil.addWildCard(jobOrClassName);
 
         String id = "schedulerLog";
         String sort = DisplayTagUtil.getListSort(id, request, new String[]{"", "jobName","jobClassName"}, "jobName");
         Boolean desc = DisplayTagUtil.getListDesc(id, request, false);
         Integer start = DisplayTagUtil.getListStart(id, request, null);
         
-        model.addAttribute("jobName", jobName);
-        model.addAttribute("jobClassName", jobClassName);
+        model.addAttribute("jobOrClassName", jobOrClassName);
+        model.addAttribute("logStatus", logStatus);
 
         model.addAttribute("id", id);
         
         Pageable page = new PageRequest(start, DisplayTagUtil.DEFAULT_PAGE_SIZE, (desc != null && desc)?Sort.Direction.DESC:Sort.Direction.ASC, sort);
         
-        Page<SchedulerLog> returnPage = schedulerLogRepository.findByJobNameOrJobClassName(wildCardJobName, wildCardJobClassName, page);
+        JobStatus jobStatus = JobStatus.SUCCESS.getCode().equalsIgnoreCase(logStatus)?JobStatus.SUCCESS:JobStatus.FAIL;
+        
+        Page<SchedulerLog> returnPage = schedulerLogRepository.findByJobNameOrJobClassName(wildCardJobName, wildCardJobClassName, jobStatus, page);
         
         model.put("rows", returnPage);
         model.put("size", (int)returnPage.getTotalElements());

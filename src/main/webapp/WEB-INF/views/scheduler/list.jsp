@@ -11,8 +11,7 @@
 		<commons:notification-message/>
 			<form id="filterForm" method="GET" action="?" class="form-inline">
 				<div class="form-group pull-right"> 
-					<input type="text"  placeholder="Job Name" id="jobName" name="jobName" class="input-sm form-control inline" value="${jobName}" />
-					<input type="text"  placeholder="Trigger Name" id="triggerName" name="triggerName" class="input-sm form-control inline" value="${triggerName}" />
+					<input type="text"  placeholder="Job or Trigger Name" id="jobOrTriggerName" name="jobOrTriggerName" class="input-sm form-control inline" value="${jobOrTriggerName}" />
 					<input type="submit" class="btn btn-primary btn-sm" value="<fmt:message key='general.search' />" />
 				</div>
 				<div class="row tableAction">

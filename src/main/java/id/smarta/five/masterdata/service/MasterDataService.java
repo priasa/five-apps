@@ -22,17 +22,15 @@ public class MasterDataService {
 
 	public static final String DEFAULT_PRODUCT_TYPE = "DEFAULT_PRODUCT_TYPE";
 	public static final String GNEWS = "GNEWS";
-	public static final String ADMINDUK = "ADMINDUK";
-	public static final String KOMDAT = "KOMDAT";
-	public static final String SIMPUS = "SIMPUS";
-	public static final String KKI = "KKI";
-
+	
 	public static final String _ADD = "_ADD";
 	public static final String _VIEW = "_VIEW";
 	public static final String _UPDATE = "_UPDATE";
 	public static final String _DELETE = "_DELETE";
 
 	public static final String AVAILABLE_SERVICE_LIST = "AVAILABLE_SERVICE_LIST";
+
+	public static final String YOUTUBE = "YOUTUBE";
 
 	@Autowired
     IMasterDataDao mdDao;

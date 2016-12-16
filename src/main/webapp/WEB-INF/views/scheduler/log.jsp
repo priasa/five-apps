@@ -11,8 +11,12 @@
 		<commons:notification-message/>
 			<form id="filterForm" method="GET" action="?" class="form-inline">
 				<div class="form-group pull-right"> 
-					<input type="text"  placeholder="Job Name" id="jobName" name="jobName" class="input-sm form-control inline" value="${jobName}" />
-					<input type="text"  placeholder="Class Name" id="jobClassName" name="jobClassName" class="input-sm form-control inline" value="${jobClassName}" />
+					<input type="text"  placeholder="Job or Class Name" id="jobOrClassName" name="jobOrClassName" class="input-sm form-control inline" value="${jobOrClassName}" />
+					<select id="logStatus" name="logStatus">
+						<c:forEach var="tempStatus" items="${ schedulerLogStatus }">
+							<option value="${ tempStatus.code }"  <c:if test="${tempStatus.code == logStatus }">selected="selected"</c:if> ><c:out value="${ tempStatus.code }"/></option>
+						</c:forEach>
+					</select>
 					<input type="submit" class="btn btn-primary btn-sm" value="<fmt:message key='general.search' />" />
 				</div>
 				<div class="row tableAction">

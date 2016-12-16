@@ -1,6 +1,7 @@
 package id.smarta.five.gnews.service;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -19,6 +20,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import id.smarta.five.common.util.CommonUtil;
 import id.smarta.five.gnews.dao.GoogleNewsRepository;
 import id.smarta.five.gnews.entity.GoogleNews;
 import id.smarta.five.masterdata.entity.MasterData;
@@ -41,9 +43,9 @@ public class GoogleNewsService {
 	@Autowired
 	GoogleNewsRepository googleNewsRepository;
 	
-	public void doStream() throws InterruptedException {
+	public void doStream() throws InterruptedException, NoSuchAlgorithmException {
 		MasterData masterData = masterDataService.findMasterDataByName(MasterDataService.GNEWS);
-		List<MasterDataContent> masterDataContent = masterData.getMasterDataContent();
+		List<MasterDataContent> masterDataContent = masterDataService.getMDContentParentById(masterData.getId());
 		if (masterDataContent != null) {
 			for (MasterDataContent mdc : masterDataContent) {
 				callGoogleSearch(mdc);
@@ -52,7 +54,7 @@ public class GoogleNewsService {
 		}
 	}
 
-	private void callGoogleSearch(MasterDataContent mdc) {
+	private void callGoogleSearch(MasterDataContent mdc) throws NoSuchAlgorithmException {
 		Set<GoogleNews> result = new HashSet<GoogleNews>();
 		String request = "https://www.google.com/search?q=" + mdc.getFieldValue() + "&num=100&tbm=nws&tbs=qdr:d";
 		LOGGER.info("Sending request..." + request);
@@ -134,6 +136,9 @@ public class GoogleNewsService {
 									resultModel.setMediaName(removeComma(mediaName));
 									resultModel.setTitle(removeComma(title));
 									resultModel.setUrl(removeComma(url));
+									
+									String hashCode = CommonUtil.md5Hash(resultModel.getUrl());
+									resultModel.setHashCode(hashCode);
 									result.add(resultModel);
 								}
 							}
@@ -172,5 +177,7 @@ public class GoogleNewsService {
 		}
 		return "null";
 	}
+	
+	
 }
 
