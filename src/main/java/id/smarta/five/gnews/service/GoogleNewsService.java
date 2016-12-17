@@ -69,6 +69,12 @@ public class GoogleNewsService {
 			if (searchResult != null) {
 				Elements content = searchResult.select("td");
 				for (Element c : content) {
+					String thumbnail = null;
+					Element img = c.select("img").first();
+					if (img != null) {
+						thumbnail = img.attr("src");
+					}
+					
 					Element link = c.select("a[href]").first();
 					if (link != null) {
 						String tempLink = link.attr("href");
@@ -131,11 +137,12 @@ public class GoogleNewsService {
 								if (url != null && !headline.isEmpty()) {
 									GoogleNews resultModel = new GoogleNews();
 									resultModel.setCreatedDate(createdDate);
-									resultModel.setHeadline(removeComma(headline));
-									resultModel.setKeyword(removeComma(mdc.getCode()));
-									resultModel.setMediaName(removeComma(mediaName));
-									resultModel.setTitle(removeComma(title));
-									resultModel.setUrl(removeComma(url));
+									resultModel.setHeadline(headline);
+									resultModel.setKeyword(mdc.getCode());
+									resultModel.setMediaName(mediaName);
+									resultModel.setTitle(title);
+									resultModel.setUrl(url);
+									resultModel.setThumbnail(thumbnail);
 									
 									String hashCode = CommonUtil.md5Hash(resultModel.getUrl());
 									resultModel.setHashCode(hashCode);
@@ -169,14 +176,6 @@ public class GoogleNewsService {
 		return result;
 	}
 
-	private String removeComma(String text) {
-		if (text != null) {
-			text = text.replaceAll("(\\r|\\n|\\r\\n)+", " ");
-			text = text.replace(",", " ");
-			return text;
-		}
-		return "null";
-	}
 	
 	
 }

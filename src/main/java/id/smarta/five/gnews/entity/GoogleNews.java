@@ -22,6 +22,7 @@ public class GoogleNews implements Serializable {
 	private Date createdDate;
 	private String title;
 	private String keyword;
+	private String thumbnail;
 	
 	public String getHashCode() {
 		return hashCode;
@@ -64,6 +65,12 @@ public class GoogleNews implements Serializable {
 	}
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
+	}
+	public String getThumbnail() {
+		return thumbnail;
+	}
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
 	}
 
 }

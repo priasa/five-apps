@@ -52,7 +52,9 @@ public class SecurityManager {
         initAdminGroup();
         initUserGroup();
         initAdminUser();
-        initAvailableServiceList();
+        initGoogleNews();
+        initYoutube();
+        initFacebook();
     }
       
 	@Transactional
@@ -119,11 +121,33 @@ public class SecurityManager {
     }
 	
     @Transactional
-    public void initAvailableServiceList() {
-    	MasterData masterData = masterDataService.findMasterDataByName(MasterDataService.AVAILABLE_SERVICE_LIST);
+    public void initGoogleNews() {
+    	MasterData masterData = masterDataService.findMasterDataByName(MasterDataService.GNEWS);
     	if (masterData == null) {
     		masterData = new MasterData();
-    		masterData.setName(MasterDataService.AVAILABLE_SERVICE_LIST);
+    		masterData.setName(MasterDataService.GNEWS);
+    		
+    		masterDataService.addData(masterData);
+    	}
+    }
+    
+    @Transactional
+    public void initYoutube() {
+    	MasterData masterData = masterDataService.findMasterDataByName(MasterDataService.YOUTUBE);
+    	if (masterData == null) {
+    		masterData = new MasterData();
+    		masterData.setName(MasterDataService.YOUTUBE);
+    		
+    		masterDataService.addData(masterData);
+    	}
+    }
+    
+    @Transactional
+    public void initFacebook() {
+    	MasterData masterData = masterDataService.findMasterDataByName(MasterDataService.FACEBOOK);
+    	if (masterData == null) {
+    		masterData = new MasterData();
+    		masterData.setName(MasterDataService.FACEBOOK);
     		
     		masterDataService.addData(masterData);
     	}

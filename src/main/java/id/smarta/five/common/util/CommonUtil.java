@@ -3,6 +3,8 @@ package id.smarta.five.common.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -65,5 +67,24 @@ public class CommonUtil {
 		return sb.toString();
 	}
 
-
+	public static String removeComma(String text) {
+		if (text != null) {
+			text = text.replaceAll("(\\r|\\n|\\r\\n)+", " ");
+			text = text.replace(",", " ");
+			return text;
+		}
+		return "null";
+	}
+	
+	public static String extractUrl(String link) {
+		String result = null;
+		Pattern pattern = Pattern.compile("([\\s\\S]*)q=(.*?)&([\\s\\S]*)");
+		Matcher matcher = pattern.matcher(link);
+		
+		while (matcher.find()) {
+		    result = matcher.group(2);
+		}
+		
+		return result;
+	}
 }

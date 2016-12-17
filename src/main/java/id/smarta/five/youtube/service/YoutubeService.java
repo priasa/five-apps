@@ -72,57 +72,64 @@ public class YoutubeService implements Serializable {
 					.get();
 
 			Element searchResult = doc.select("div#results").first();
-			Elements lookupContents = searchResult.select("div.yt-lockup-content");
+			Elements lookups = searchResult.select("div.yt-lockup");
 			int i = 0;
-			for (Element element : lookupContents) {
+			for (Element lookup : lookups) {
 				YoutubeEntity searchResultModel = new YoutubeEntity();
 				searchResultModel.setKeyword(mdc.getCode());
-								
-				Element title = element.select("h3.yt-lockup-title").first();
-				if (title != null) {
-					Element link = title.select("a[href]").first();
-					if (link != null) {
-						searchResultModel.setVideoUrl("youtube.com"+link.attr("href"));
-						searchResultModel.setVideoTitle(removeComma(link.text()));
-					}
+				Element thumbnail = lookup.select("img").first();
+				if (thumbnail != null) {
+					searchResultModel.setThumbnail(thumbnail.attr("src"));
 				}
 				
-				Element byLine = element.select("div.yt-lockup-byline").first();
-				if (byLine != null) {
-					Element byLineLink = byLine.select("a[href]").first();
-					if (byLineLink != null) {
-						searchResultModel.setUserUrl("youtube.com" + byLineLink.attr("href"));
-						searchResultModel.setUsername(removeComma(byLineLink.text()));
+				Element lookupContent = lookup.select("div.yt-lockup-content").first();
+				if (lookupContent != null) {
+					Element title = lookupContent.select("h3.yt-lockup-title").first();
+					if (title != null) {
+						Element link = title.select("a[href]").first();
+						if (link != null) {
+							searchResultModel.setVideoUrl("youtube.com"+link.attr("href"));
+							searchResultModel.setVideoTitle(link.text());
+						}
 					}
-				}
-				
-				Element lookupMeta = element.select("div.yt-lockup-meta").first();
-				if (lookupMeta != null) {
-					Element lookupMetaInfo = lookupMeta.select("ul.yt-lockup-meta-info").first();
-					if (lookupMetaInfo != null) {
-						Elements listofLI = lookupMetaInfo.select("li");
-						for (Element li : listofLI) {
-							String text = li.text();
-							LOGGER.info("Meta info :"+text);
-							if (text.contains("detik") || text.contains("menit") || text.contains("jam") || 
-									text.contains("hari") || text.contains("minggu") || text.contains("bulan")) {
-								Date createdDate = extractDate(text);
-								searchResultModel.setCreatedDate(createdDate);
-							} else {
-								Pattern pattern = Pattern.compile("(\\d+)(.*?)");
-								Matcher matcher = pattern.matcher(text);
-								while (matcher.find()) {
-								    searchResultModel.setTotalViews(Long.parseLong(matcher.group(1)));
+					
+					Element byLine = lookupContent.select("div.yt-lockup-byline").first();
+					if (byLine != null) {
+						Element byLineLink = byLine.select("a[href]").first();
+						if (byLineLink != null) {
+							searchResultModel.setUserUrl("youtube.com" + byLineLink.attr("href"));
+							searchResultModel.setUsername(byLineLink.text());
+						}
+					}
+					
+					Element lookupMeta = lookupContent.select("div.yt-lockup-meta").first();
+					if (lookupMeta != null) {
+						Element lookupMetaInfo = lookupMeta.select("ul.yt-lockup-meta-info").first();
+						if (lookupMetaInfo != null) {
+							Elements listofLI = lookupMetaInfo.select("li");
+							for (Element li : listofLI) {
+								String text = li.text();
+								LOGGER.info("Meta info :"+text);
+								if (text.contains("detik") || text.contains("menit") || text.contains("jam") || 
+										text.contains("hari") || text.contains("minggu") || text.contains("bulan")) {
+									Date createdDate = extractDate(text);
+									searchResultModel.setCreatedDate(createdDate);
+								} else {
+									Pattern pattern = Pattern.compile("(\\d+)(.*?)");
+									Matcher matcher = pattern.matcher(text);
+									while (matcher.find()) {
+									    searchResultModel.setTotalViews(Long.parseLong(matcher.group(1)));
+									}
 								}
 							}
 						}
 					}
+					String id = CommonUtil.md5Hash(searchResultModel.getUserUrl());
+					searchResultModel.setHashCode(id);
+					result.add(searchResultModel);
+					i++;
 				}
-				String id = CommonUtil.md5Hash(searchResultModel.getUserUrl());
-				searchResultModel.setHashCode(id);
-				result.add(searchResultModel);
 				
-				i++;
 			}
 			LOGGER.info("total video : "+i);
 		} catch (IOException e) {
@@ -180,12 +187,4 @@ public class YoutubeService implements Serializable {
 		return result;
 	}
 
-	private String removeComma(String text) {
-		if (text != null) {
-			text = text.replaceAll("(\\r|\\n|\\r\\n)+", " ");
-			text = text.replace(",", " ");
-			return text;
-		}
-		return "null";
-	}
 }

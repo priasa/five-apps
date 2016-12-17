@@ -27,6 +27,7 @@ public class YoutubeEntity implements Serializable {
 	private Date createdDate;
 	private Long totalViews;
 	private String keyword;
+	private String thumbnail;
 	
 	public String getHashCode() {
 		return hashCode;
@@ -76,6 +77,11 @@ public class YoutubeEntity implements Serializable {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
-	
+	public String getThumbnail() {
+		return thumbnail;
+	}
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
 	
 }
