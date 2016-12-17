@@ -21,7 +21,7 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			/WEB-INF/spring-context.xml
+			classpath:context/spring-context.xml
 		</param-value>
 	</context-param>
 
@@ -29,7 +29,7 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<listener>
-		<listener-class>id.kemenkes.sip.web.WebappServletContext</listener-class>
+		<listener-class>id.smarta.five.web.WebappServletContext</listener-class>
 	</listener>
 	
 	
