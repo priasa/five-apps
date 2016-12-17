@@ -20,9 +20,7 @@ public class MasterDataService {
     
     static final Logger LOGGER = LoggerFactory.getLogger(MasterDataService.class);
 
-	public static final String DEFAULT_PRODUCT_TYPE = "DEFAULT_PRODUCT_TYPE";
-	public static final String GNEWS = "GNEWS";
-	
+	public static final String DEFAULT_PRODUCT_TYPE = "DEFAULT_PRODUCT_TYPE";	
 	public static final String _ADD = "_ADD";
 	public static final String _VIEW = "_VIEW";
 	public static final String _UPDATE = "_UPDATE";
@@ -30,7 +28,9 @@ public class MasterDataService {
 
 	public static final String AVAILABLE_SERVICE_LIST = "AVAILABLE_SERVICE_LIST";
 
+	public static final String GNEWS = "GNEWS";
 	public static final String YOUTUBE = "YOUTUBE";
+	public static final String FACEBOOK = "FACEBOOK";
 
 	@Autowired
     IMasterDataDao mdDao;
