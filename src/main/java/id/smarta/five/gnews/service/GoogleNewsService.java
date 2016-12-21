@@ -1,6 +1,10 @@
 package id.smarta.five.gnews.service;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
 import java.util.Date;
@@ -142,6 +146,10 @@ public class GoogleNewsService {
 									resultModel.setMediaName(mediaName);
 									resultModel.setTitle(title);
 									resultModel.setUrl(url);
+									if (url != null) {
+										resultModel.setHtmlCode(loadHtmlContent(url));
+										System.out.println("###"+resultModel.getHtmlCode());
+									}
 									resultModel.setThumbnail(thumbnail);
 									
 									String hashCode = CommonUtil.md5Hash(resultModel.getUrl());
@@ -162,6 +170,26 @@ public class GoogleNewsService {
 		if (!result.isEmpty()) {
 			googleNewsRepository.saveAll(result);
 		}
+	}
+
+	private String loadHtmlContent(String url) throws IOException {
+		URL obj = new URL(url);
+		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+		con.setRequestMethod("GET");
+
+		int responseCode = con.getResponseCode();
+		LOGGER.info("\nSending 'GET' request to URL : " + url);
+		LOGGER.info("Response Code : " + responseCode);
+
+		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		String inputLine;
+		StringBuffer sb = new StringBuffer();
+
+		while ((inputLine = in.readLine()) != null) {
+			sb.append(inputLine);
+		}
+		in.close();
+		return sb.toString();
 	}
 
 	private String extractUrl(String link) {

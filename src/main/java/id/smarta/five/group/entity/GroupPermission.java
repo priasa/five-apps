@@ -35,12 +35,10 @@ public class GroupPermission extends AbstractPersistable{
 	public static final String MODULE_UKME = "UKME";
 	public static final String MODULE_UKMP = "UKMP";
 	public static final String MODULE_UKP = "UKP";
-
 	public static final String MODULE_LT = "LT";
-
 	public static final String MODULE_LAYANAN = "LAYANAN";
-
 	public static final String MODULE_SCHEDULER = "SCHEDULER";
+	public static final String MODULE_TWITTER = "TWITTER";
        
     private String permissionKey;
     

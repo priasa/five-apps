@@ -56,6 +56,8 @@
 		<security:intercept-url pattern="/web/masterdata/**" access="hasAnyRole('ROLE_MASTER_DATA_VIEW', 'ROLE_MASTER_DATA_ADD_EDIT', 'ROLE_MASTER_DATA_DELETE')"/>
 		<security:intercept-url pattern="/web/guest/**" access="hasAnyRole('ROLE_GUEST_VIEW', 'ROLE_GUEST_ADD_EDIT', 'ROLE_GUEST_DELETE')"/>
 		<security:intercept-url pattern="/web/scheduler/**" access="hasAnyRole('ROLE_SCHEDULER_VIEW', 'ROLE_SCHEDULER_ADD_EDIT', 'ROLE_SCHEDULER_DELETE')"/>
+		<security:intercept-url pattern="/web/tenant/**" access="hasAnyRole('ROLE_TENANT_VIEW', 'ROLE_TENANT_ADD_EDIT', 'ROLE_TENANT_DELETE')"/>
+		<security:intercept-url pattern="/web/twitter/**" access="hasAnyRole('ROLE_TWITTER_VIEW', 'ROLE_TWITTER_ADD_EDIT', 'ROLE_TWITTER_DELETE')"/>
 				
 		<security:intercept-url pattern="/web/**" access="isAuthenticated()"/>
 		

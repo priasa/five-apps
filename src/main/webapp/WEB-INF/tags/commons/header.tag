@@ -138,9 +138,30 @@
 						</c:if>
 					</sec:authorize>
 					<sec:authorize
+						access="hasAnyRole('ROLE_TWITTER_VIEW', 'ROLE_TWITTER_DATA_ADD_EDIT', 'ROLE_TWITTER_DATA_DELETE')">
+						<c:if test="${isLogin }">
+							<li 
+								class="<c:if test="${fn:contains(menu, 'twitter')}">in active</c:if>">
+								<a href="#"> 
+									<i class="fa fa-twitter"></i> 
+									<span class="nav-label">Twitter</span> 
+									<span class="fa arrow"></span>
+								</a>
+								<ul
+									class="nav nav-second-level collapse <c:if test="${fn:contains(menu, 'twitter.stream')}">in active</c:if>"
+									aria-expanded="true" style="">
+									<li <c:if test="${menu eq 'twitter.stream'}">class="active"</c:if>>
+										<a href="${pageContext.request.contextPath}/web/twitter/stream/list">Stream</a>
+									</li>
+								</ul>
+							</li>
+						</c:if>
+					</sec:authorize>
+					<sec:authorize
 						access="hasAnyRole('ROLE_MASTER_DATA_VIEW', 'ROLE_MASTER_DATA_ADD_EDIT', 'ROLE_MASTER_DATA_DELETE')">
 						<c:if test="${isLogin }">
-							<li>
+							<li
+								class="<c:if test="${fn:contains(menu, 'masterdata')}">in active</c:if>">
 								<a href="#"> 
 									<i class="fa fa-gears"></i> 
 									<span class="nav-label">Master Data</span> 
@@ -150,9 +171,7 @@
 									class="nav nav-second-level collapse <c:if test="${fn:contains(menu, 'masterdata')}">in active</c:if>"
 									aria-expanded="true" style="">
 									<li <c:if test="${menu eq 'masterdata'}">class="active"</c:if>>
-										<a href="${pageContext.request.contextPath}/web/masterdata/mdList">&nbsp;&nbsp;Master
-											Data Listing
-										</a>
+										<a href="${pageContext.request.contextPath}/web/masterdata/mdList">Master Data Listing</a>
 									</li>
 								</ul>
 							</li>
@@ -180,7 +199,12 @@
 											<c:if test="${menu eq 'admin.group'}">class="active"</c:if>><a
 											href="${ pageContext.request.contextPath }/web/group/list">Group</a></li>
 									</sec:authorize>
-
+									<sec:authorize
+										access="hasAnyRole('ROLE_TENANT_VIEW', 'ROLE_TENANT_ADD_EDIT', 'ROLE_TENANT_DELETE')">
+										<li
+											<c:if test="${menu eq 'admin.tenant'}">class="active"</c:if>><a
+											href="${ pageContext.request.contextPath }/web/tenant/list">Tenant</a></li>
+									</sec:authorize>
 								</ul>
 							</li>
 						</c:if>

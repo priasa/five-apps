@@ -120,7 +120,9 @@ public class GroupService {
         roleMap.put(GroupPermission.MODULE_USER, getModulePermissionList(GroupPermission.MODULE_USER, true, true, true, false));
         roleMap.put(GroupPermission.MODULE_MASTER_DATA, getModulePermissionList(GroupPermission.MODULE_MASTER_DATA, true, true, true, false));
         roleMap.put(GroupPermission.MODULE_SCHEDULER, getModulePermissionList(GroupPermission.MODULE_SCHEDULER, true, true, true, false));
-        
+        roleMap.put(GroupPermission.MODULE_TENANT, getModulePermissionList(GroupPermission.MODULE_TENANT, true, true, true, false));
+        roleMap.put(GroupPermission.MODULE_TWITTER, getModulePermissionList(GroupPermission.MODULE_TWITTER, true, true, true, false));
+
         return roleMap;
     }
     
